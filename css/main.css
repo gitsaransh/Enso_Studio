@@ -412,20 +412,20 @@ section {
     flex-direction: column;
     justify-content: space-between;
     width: 0.5em;
-    /* Slightly wider */
-    height: 0.68em;
-    /* Significantly taller to match visual weight of Michroma */
-    margin-right: 0.15em;
+    height: 0.65em;
+    /* Precisely reduced to align flush with N */
+    margin-right: 0.22em;
+    /* More breathing room */
     flex-shrink: 0;
-    transform: translateY(-0.02em);
-    /* Nudge up slightly to center vertically */
+    transform: translateY(-0.04em);
+    /* Pulls up to align baseline with text */
 }
 
 .stylized-e .bar {
     display: block;
     width: 100%;
-    height: 0.1em;
-    /* Restored weight */
+    height: 0.11em;
+    /* Thicker to match visual weight of Michroma font */
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
 }
