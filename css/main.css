@@ -413,19 +413,19 @@ section {
     justify-content: space-between;
     width: 0.45em;
     /* Proportional to a normal 'E' */
-    height: 0.52em;
-    /* Adjusted for smaller font size */
+    height: 0.58em;
+    /* Restored to match cap-height of Michroma */
     margin-right: 0.12em;
     flex-shrink: 0;
-    transform: translateY(0.04em);
-    /* Visual center nudge */
+    transform: translateY(0.02em);
+    /* Slight optical center nudge */
 }
 
 .stylized-e .bar {
     display: block;
     width: 100%;
-    height: 0.08em;
-    /* Slightly thinner */
+    height: 0.1em;
+    /* Restored weight */
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
 }
