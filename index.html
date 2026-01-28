@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ENSO Studio builds apps, games, and intelligent systems through focus, clarity, and disciplined execution. A modern digital product studio.">
+    <meta name="keywords"
+        content="ENSO Studio, app development, game development, AI tools, automation, digital products">
+    <meta name="author" content="ENSO Studio">
+
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+    <!-- SEO -->
+    <title>ENSO Studio — Quietly Shipping Focused Digital Products</title>
+    <link rel="canonical" href="https://ensostudio.com">
+
+    <!-- Social Media / Open Graph -->
+    <meta property="og:site_name" content="ENSO Studio">
+    <meta property="og:title" content="ENSO Studio — Quietly Shipping Focused Digital Products">
+    <meta property="og:description"
+        content="ENSO Studio builds apps, games, and intelligent systems through focus, clarity, and disciplined execution.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ensostudio.com">
+    <meta property="og:image" content="https://ensostudio.com/assets/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ENSO Studio — Quietly Shipping Focused Digital Products">
+    <meta name="twitter:description"
+        content="ENSO Studio builds apps, games, and intelligent systems through focus, clarity, and disciplined execution.">
+    <meta name="twitter:image" content="https://ensostudio.com/assets/og-image.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Michroma&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <!-- Grain Texture Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero fade-in">
+        <div class="container">
+            <div class="hero-content">
+                <div class="enso-symbol-container">
+                    <div class="enso-ring ring-1"></div>
+                    <div class="enso-ring ring-2"></div>
+                    <div class="enso-ring ring-3"></div>
+                    <svg class="enso-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#00d4ff;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#00ff88;stop-opacity:1" />
+                            </linearGradient>
+                            <filter id="glow-hard" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur" />
+                                    <feMergeNode in="SourceGraphic" />
+                                </feMerge>
+                            </filter>
+                        </defs>
+
+                        <!-- Core Streaks (Brightest) -->
+                        <g class="rotate-layer-1">
+                            <path d="M 200,60 A 140,140 0 1,1 60,200" fill="none" stroke="url(#neonGradient)"
+                                stroke-width="2" stroke-linecap="round" stroke-dasharray="20 40 80 30" opacity="0.9" />
+                            <path d="M 200,50 A 150,150 0 1,1 50,200" fill="none" stroke="#fff" stroke-width="1.5"
+                                stroke-linecap="round" stroke-dasharray="150 100" opacity="1"
+                                filter="url(#glow-hard)" />
+                        </g>
+
+                        <!-- Mid Layer (Body) -->
+                        <g class="rotate-layer-2">
+                            <path d="M 210,70 A 130,130 0 1,1 70,210" fill="none" stroke="url(#neonGradient)"
+                                stroke-width="8" stroke-linecap="round" stroke-dasharray="200 40" opacity="0.6" />
+                            <path d="M 190,45 A 155,155 0 1,1 45,190" fill="none" stroke="url(#neonGradient)"
+                                stroke-width="4" stroke-linecap="round" stroke-dasharray="50 20 100 60" opacity="0.7" />
+                            <!-- Extra fine detail lines -->
+                            <path d="M 200,80 A 120,120 0 1,1 80,200" fill="none" stroke="#00ff88" stroke-width="1"
+                                stroke-dasharray="10 20" opacity="0.5" />
+                        </g>
+
+                        <!-- Outer/Inner Aura (Faint) -->
+                        <g class="rotate-layer-3">
+                            <path d="M 220,90 A 110,110 0 1,1 90,220" fill="none" stroke="#00d4ff" stroke-width="15"
+                                stroke-linecap="round" opacity="0.15" filter="url(#glow-hard)" />
+                            <path d="M 180,30 A 170,170 0 1,1 30,180" fill="none" stroke="#00ffff" stroke-width="1"
+                                stroke-dasharray="2 10" opacity="0.4" />
+                        </g>
+                    </svg>
+
+                    <!-- HTML-based Particles for depth -->
+                    <div class="particle p1"></div>
+                    <div class="particle p2"></div>
+                    <div class="particle p3"></div>
+                    <div class="particle p4"></div>
+                </div>
+                <h1 class="hero-title">
+                    <span class="stylized-e">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </span>NSO STUDIO
+                </h1>
+                <p class="hero-tagline">Quietly shipping focused digital products.</p>
+                <p class="hero-subtext">ENSO Studio builds apps, games, and intelligent systems through focus, clarity,
+                    and disciplined execution.</p>
+                <a href="#work" class="cta-button" id="view-work-cta">View Work</a>
+            </div>
+
+            <!-- Theme Switcher -->
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- About / Philosophy Section -->
+    <section id="about" class="about fade-in">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">Philosophy</h2>
+                <div class="philosophy-text">
+                    <p>ENSO Studio operates as a system-driven studio, prioritizing focus over volume, iteration over
+                        perfection, and clarity over complexity.</p>
+                    <p>We build digital products through disciplined execution and long-term thinking. Each project
+                        reflects our commitment to simplicity, functional design, and sustainable development practices.
+                    </p>
+                    <p>Our approach is rooted in repetition and refinement — the continuous cycle of building, testing,
+                        and improving until the solution is both elegant and effective.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Build Section -->
+    <section id="services" class="services fade-in">
+        <div class="container">
+            <h2 class="section-title">What We Build</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3 class="service-title">Mobile Apps</h3>
+                    <p class="service-description">Practical, focused digital utilities</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="service-title">Games</h3>
+                    <p class="service-description">Hyper-casual and puzzle experiences</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="service-title">AI Tools</h3>
+                    <p class="service-description">Intelligent, lightweight systems</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="service-title">Automation</h3>
+                    <p class="service-description">Internal and external workflows</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="service-title">Experiments</h3>
+                    <p class="service-description">Controlled product explorations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work / Products Section -->
+    <section id="work" class="work fade-in">
+        <div class="container">
+            <h2 class="section-title">Work</h2>
+            <div class="work-grid">
+                <div class="work-card" data-project="mindspark" role="button" tabindex="0">
+                    <div class="work-header">
+                        <h3 class="work-title">MindSpark</h3>
+                        <span class="work-status status-live">Live</span>
+                    </div>
+                    <p class="work-category">Game</p>
+                    <p class="work-description">Daily brain training through lateral thinking puzzles</p>
+                    <span class="view-case-study">View Case Study →</span>
+                </div>
+
+                <div class="work-card" data-project="daily-aesthetic" role="button" tabindex="0">
+                    <div class="work-header">
+                        <h3 class="work-title">Daily Aesthetic</h3>
+                        <span class="work-status status-live">Live</span>
+                    </div>
+                    <p class="work-category">App</p>
+                    <p class="work-description">Curated daily aesthetic inspiration and mood boards</p>
+                    <span class="view-case-study">View Case Study →</span>
+                </div>
+
+                <div class="work-card" data-project="reelsreward" role="button" tabindex="0">
+                    <div class="work-header">
+                        <h3 class="work-title">ReelsReward</h3>
+                        <span class="work-status status-progress">In Progress</span>
+                    </div>
+                    <p class="work-category">App</p>
+                    <p class="work-description">Gamified content consumption with reward mechanics</p>
+                    <span class="view-case-study">View Case Study →</span>
+                </div>
+
+                <div class="work-card" data-project="viraaj-editor" role="button" tabindex="0">
+                    <div class="work-header">
+                        <h3 class="work-title">Viraaj Editor</h3>
+                        <span class="work-status status-progress">In Progress</span>
+                    </div>
+                    <p class="work-category">Tool</p>
+                    <p class="work-description">Privacy-first encrypted text editor with cloud sync</p>
+                    <span class="view-case-study">View Case Study →</span>
+                </div>
+
+                <div class="work-card" data-project="flow-automation" role="button" tabindex="0">
+                    <div class="work-header">
+                        <h3 class="work-title">Flow Automation</h3>
+                        <span class="work-status status-experiment">Experiment</span>
+                    </div>
+                    <p class="work-category">Automation</p>
+                    <p class="work-description">Intelligent workflow automation for repetitive tasks</p>
+                    <span class="view-case-study">View Case Study →</span>
+                </div>
+
+                <div class="work-card" data-project="insight-ai" role="button" tabindex="0">
+                    <div class="work-header">
+                        <h3 class="work-title">Insight AI</h3>
+                        <span class="work-status status-experiment">Experiment</span>
+                    </div>
+                    <p class="work-category">AI Tool</p>
+                    <p class="work-description">AI-powered analytics and insight generation tool</p>
+                    <span class="view-case-study">View Case Study →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials fade-in">
+        <div class="container">
+            <h2 class="section-title">What People Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"ENSO Studio delivered a polished, engaging puzzle game that
+                            exceeded our expectations. Their focus on user experience and clean design is exceptional."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4 class="author-name">Sarah Chen</h4>
+                            <p class="author-role">Product Manager, TechVentures</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Working with ENSO Studio was seamless. They understand the balance
+                            between aesthetics and functionality, creating products that users love."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4 class="author-name">Marcus Rodriguez</h4>
+                            <p class="author-role">Founder, CreativeFlow</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Their systematic approach to development and commitment to quality
+                            made our collaboration productive and stress-free. Highly recommended."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4 class="author-name">Priya Sharma</h4>
+                            <p class="author-role">CEO, InnovateLabs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Studio Credit Section -->
+    <section id="credit" class="credit fade-in">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">Studio Credit</h2>
+                <div class="credit-text">
+                    <p>Products developed by ENSO Studio may display the following credits:</p>
+                    <div class="credit-examples">
+                        <p class="credit-line">"Powered by ENSO Studio"</p>
+                        <p class="credit-line">"Developed by ENSO Studio"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-contact">
+                    <p>For collaborations or inquiries:</p>
+                    <a href="mailto:contact@ensostudio.com" class="footer-email"
+                        id="contact-email">contact@ensostudio.com</a>
+                </div>
+                <nav class="footer-nav">
+                    <a href="#about" class="footer-link">Philosophy</a>
+                    <a href="#services" class="footer-link">Services</a>
+                    <a href="#work" class="footer-link">Work</a>
+                    <a href="#credit" class="footer-link">Credit</a>
+                </nav>
+                <div class="footer-copyright">
+                    <p>© ENSO Studio. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Case Study Modal -->
+    <div class="modal" id="case-study-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-body" id="modal-body">
+                <!-- Content will be dynamically inserted -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
