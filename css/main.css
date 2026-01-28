@@ -406,36 +406,37 @@ section {
     }
 }
 
-/* Stylized 'E' - Simplified to text with effects */
+/* Stylized 'E' Construction - Three Bars */
 .stylized-e {
     display: inline-block;
-    font-weight: 600;
-    color: var(--color-accent);
-    text-shadow:
-        0 0 10px rgba(0, 212, 255, 0.8),
-        0 0 20px rgba(0, 212, 255, 0.6),
-        0 0 30px rgba(0, 212, 255, 0.4);
-    margin-right: 0.05em;
+    width: 0.55em;
+    height: 1em;
     position: relative;
-    animation: pulse-glow 3s ease-in-out infinite;
+    margin-right: 0.1em;
+    vertical-align: baseline;
+    transform: translateY(-0.05em);
 }
 
-@keyframes pulse-glow {
+.stylized-e .bar {
+    display: block;
+    width: 100%;
+    height: 0.12em;
+    background-color: var(--color-text-primary);
+    position: absolute;
+    left: 0;
+}
 
-    0%,
-    100% {
-        text-shadow:
-            0 0 10px rgba(0, 212, 255, 0.8),
-            0 0 20px rgba(0, 212, 255, 0.6),
-            0 0 30px rgba(0, 212, 255, 0.4);
-    }
+.stylized-e .bar:nth-child(1) {
+    top: 0;
+}
 
-    50% {
-        text-shadow:
-            0 0 15px rgba(0, 255, 255, 1),
-            0 0 30px rgba(0, 212, 255, 0.8),
-            0 0 45px rgba(0, 212, 255, 0.6);
-    }
+.stylized-e .bar:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.stylized-e .bar:nth-child(3) {
+    bottom: 0;
 }
 
 .hero-title {
@@ -445,7 +446,6 @@ section {
     letter-spacing: 0.1em;
     text-transform: uppercase;
 
-    /* Simple inline-block for natural text flow */
     display: block;
     text-align: center;
 
