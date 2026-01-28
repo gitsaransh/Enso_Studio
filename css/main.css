@@ -413,8 +413,8 @@ section {
     justify-content: space-between;
     width: 0.45em;
     /* Proportional to a normal 'E' */
-    height: 0.58em;
-    /* Cap-height match for Michroma */
+    height: 0.52em;
+    /* Adjusted for smaller font size */
     margin-right: 0.12em;
     flex-shrink: 0;
     transform: translateY(0.04em);
@@ -424,8 +424,8 @@ section {
 .stylized-e .bar {
     display: block;
     width: 100%;
-    height: 0.1em;
-    /* Matches the weight of the font characters */
+    height: 0.08em;
+    /* Slightly thinner */
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
 }
@@ -433,6 +433,8 @@ section {
 .hero-title {
     margin-bottom: var(--spacing-md);
     font-family: 'Michroma', sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    /* Reduced size */
     font-weight: 400;
     letter-spacing: 0.15em;
     text-transform: uppercase;
