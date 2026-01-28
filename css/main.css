@@ -407,40 +407,34 @@ section {
 }
 
 /* Stylized 'E' Construction - Three Bars */
-/* Stylized 'E' Construction - Three Bars */
 .stylized-e {
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 0.8em;
-    /* Slightly wider for elegant look */
-    height: 0.62em;
-    /* Matches the cap height of Outfit 300 */
-    margin-right: 0.25em;
-    /* Breathing room between E and NSO */
+    width: 0.45em;
+    /* Proportional to a normal 'E' */
+    height: 0.58em;
+    /* Cap-height match for Michroma */
+    margin-right: 0.12em;
     flex-shrink: 0;
-    /* Vertical correction for optical alignment */
-    transform: translateY(0.01em);
+    transform: translateY(0.04em);
+    /* Visual center nudge */
 }
 
 .stylized-e .bar {
     display: block;
     width: 100%;
-    height: 0.08em;
-    /* Thinner bars for elegance */
+    height: 0.1em;
+    /* Matches the weight of the font characters */
     background-color: #ffffff;
-    border-radius: 0;
-    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
-    /* Glow on individual bars */
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
 }
 
 .hero-title {
     margin-bottom: var(--spacing-md);
-    font-family: 'Outfit', sans-serif;
-    font-weight: 300;
-    /* Ultra-light and clean */
-    letter-spacing: 0.3em;
-    /* Very wide tracking for premium feel */
+    font-family: 'Michroma', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: #ffffff;
 
@@ -449,11 +443,9 @@ section {
     justify-content: center;
     gap: 0;
 
-    /* Signature cyan glow from the reference */
     text-shadow:
-        0 0 5px rgba(0, 212, 255, 0.3),
-        0 0 15px rgba(0, 212, 255, 0.4),
-        0 0 35px rgba(0, 212, 255, 0.2);
+        0 0 10px rgba(0, 212, 255, 0.4),
+        0 0 20px rgba(0, 212, 255, 0.2);
 
     line-height: 1;
 }
