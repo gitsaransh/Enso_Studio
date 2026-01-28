@@ -411,14 +411,14 @@ section {
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 0.45em;
-    /* Proportional to a normal 'E' */
-    height: 0.58em;
-    /* Restored to match cap-height of Michroma */
-    margin-right: 0.12em;
+    width: 0.5em;
+    /* Slightly wider */
+    height: 0.68em;
+    /* Significantly taller to match visual weight of Michroma */
+    margin-right: 0.15em;
     flex-shrink: 0;
-    transform: translateY(0.02em);
-    /* Slight optical center nudge */
+    transform: translateY(-0.02em);
+    /* Nudge up slightly to center vertically */
 }
 
 .stylized-e .bar {
