@@ -408,34 +408,23 @@ section {
 
 /* Stylized 'E' Construction - Three Bars */
 .stylized-e {
-    display: inline-block;
-    width: 0.5em;
-    height: 0.75em;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 0.55em;
+    height: 0.62em;
+    /* Optimized for Michroma cap-height */
     margin-right: 0.15em;
-    vertical-align: baseline;
+    flex-shrink: 0;
 }
 
 .stylized-e .bar {
     display: block;
     width: 100%;
-    height: 0.1em;
+    height: 0.12em;
+    /* Matches the visual weight of the font strokes */
     background-color: var(--color-text-primary);
-    position: absolute;
-    left: 0;
-}
-
-.stylized-e .bar:nth-child(1) {
-    top: 0;
-}
-
-.stylized-e .bar:nth-child(2) {
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.stylized-e .bar:nth-child(3) {
-    bottom: 0;
+    border-radius: 1px;
 }
 
 .hero-title {
@@ -445,11 +434,15 @@ section {
     letter-spacing: 0.1em;
     text-transform: uppercase;
 
-    display: block;
-    text-align: center;
+    /* Flexbox ensures perfect alignment regardless of container width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
 
     text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-    line-height: 1.2;
+    line-height: 1;
+    /* Reset to 1 to remove unwanted font-metric padding */
 }
 
 .hero-tagline {
