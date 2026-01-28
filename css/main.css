@@ -406,52 +406,48 @@ section {
     }
 }
 
-/* ============================================
-   New Enso Logo Design (Asian Expressive)
-   ============================================ */
-.enso-logo-wrapper {
-    margin-bottom: var(--spacing-xl);
-    display: flex;
+/* Stylized 'E' Construction - Three Bars */
+.stylized-e {
+    display: inline-flex;
     flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-md);
+    justify-content: space-between;
+    width: 0.45em;
+    /* Proportional to a normal 'E' */
+    height: 0.58em;
+    /* Cap-height match for Michroma */
+    margin-right: 0.12em;
+    flex-shrink: 0;
+    transform: translateY(0.04em);
+    /* Visual center nudge */
 }
 
-.enso-logo-svg {
-    width: clamp(280px, 50vw, 400px);
-    height: auto;
-    color: var(--color-text-primary);
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.1));
-}
-
-.tagline-expressive {
-    font-family: var(--font-family-primary);
-    font-size: 0.85rem;
-    font-weight: 400;
-    letter-spacing: 0.6em;
-    /* Extremely wide tracking from reference */
-    color: var(--color-text-primary);
-    opacity: 0.8;
-    text-transform: uppercase;
-    margin-top: -10px;
-}
-
-/* Subtle brush stroke animation */
-.letter-brush .enso-circle {
-    stroke-dasharray: 400;
-    stroke-dashoffset: 400;
-    animation: brush-draw 2.5s ease-out forwards;
-}
-
-@keyframes brush-draw {
-    to {
-        stroke-dashoffset: 0;
-    }
+.stylized-e .bar {
+    display: block;
+    width: 100%;
+    height: 0.1em;
+    /* Matches the weight of the font characters */
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
 }
 
 .hero-title {
-    display: none;
-    /* Replaced by enso-logo-wrapper */
+    margin-bottom: var(--spacing-md);
+    font-family: 'Michroma', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+
+    text-shadow:
+        0 0 10px rgba(0, 212, 255, 0.4),
+        0 0 20px rgba(0, 212, 255, 0.2);
+
+    line-height: 1;
 }
 
 .hero-tagline {
