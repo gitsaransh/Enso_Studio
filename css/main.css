@@ -407,44 +407,55 @@ section {
 }
 
 /* Stylized 'E' Construction - Three Bars */
+/* Stylized 'E' Construction - Three Bars */
 .stylized-e {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 0.55em;
-    height: 0.66em;
-    /* Slightly taller to match Michroma better */
-    margin-right: 0.15em;
+    width: 0.8em;
+    /* Slightly wider for elegant look */
+    height: 0.62em;
+    /* Matches the cap height of Outfit 300 */
+    margin-right: 0.25em;
+    /* Breathing room between E and NSO */
     flex-shrink: 0;
-    transform: translateY(0.06em);
-    /* Nudges the bars down for optical alignment */
+    /* Vertical correction for optical alignment */
+    transform: translateY(0.01em);
 }
 
 .stylized-e .bar {
     display: block;
     width: 100%;
-    height: 0.12em;
-    /* Matches the visual weight of the font strokes */
-    background-color: var(--color-text-primary);
-    border-radius: 1px;
+    height: 0.08em;
+    /* Thinner bars for elegance */
+    background-color: #ffffff;
+    border-radius: 0;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    /* Glow on individual bars */
 }
 
 .hero-title {
     margin-bottom: var(--spacing-md);
-    font-family: 'Michroma', sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.1em;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    /* Ultra-light and clean */
+    letter-spacing: 0.3em;
+    /* Very wide tracking for premium feel */
     text-transform: uppercase;
+    color: #ffffff;
 
-    /* Flexbox ensures perfect alignment regardless of container width */
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0;
 
-    text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    /* Signature cyan glow from the reference */
+    text-shadow:
+        0 0 5px rgba(0, 212, 255, 0.3),
+        0 0 15px rgba(0, 212, 255, 0.4),
+        0 0 35px rgba(0, 212, 255, 0.2);
+
     line-height: 1;
-    /* Reset to 1 to remove unwanted font-metric padding */
 }
 
 .hero-tagline {
