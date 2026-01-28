@@ -406,30 +406,36 @@ section {
     }
 }
 
-/* Stylized 'E' Construction */
+/* Stylized 'E' - Simplified to text with effects */
 .stylized-e {
-    display: flex;
-    /* Changed to flex column for internal bar distribution */
-    flex-direction: column;
-    justify-content: space-between;
-    height: 0.68em;
-    /* Adjusted height to match font cap-height better */
-    width: 0.6em;
-    margin-right: 0.1em;
-    /* Small manual gap */
-    vertical-align: middle;
+    display: inline-block;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-shadow:
+        0 0 10px rgba(0, 212, 255, 0.8),
+        0 0 20px rgba(0, 212, 255, 0.6),
+        0 0 30px rgba(0, 212, 255, 0.4);
+    margin-right: 0.05em;
     position: relative;
-    top: 0;
-    /* Reset top offset */
+    animation: pulse-glow 3s ease-in-out infinite;
 }
 
-.stylized-e .bar {
-    display: block;
-    width: 100%;
-    height: 0.12em;
-    background-color: var(--color-text-primary);
-    border-radius: 2px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        text-shadow:
+            0 0 10px rgba(0, 212, 255, 0.8),
+            0 0 20px rgba(0, 212, 255, 0.6),
+            0 0 30px rgba(0, 212, 255, 0.4);
+    }
+
+    50% {
+        text-shadow:
+            0 0 15px rgba(0, 255, 255, 1),
+            0 0 30px rgba(0, 212, 255, 0.8),
+            0 0 45px rgba(0, 212, 255, 0.6);
+    }
 }
 
 .hero-title {
@@ -439,16 +445,12 @@ section {
     letter-spacing: 0.1em;
     text-transform: uppercase;
 
-    /* Center alignment is safer for block-like icons + text */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 0.15em;
-    /* Explicit gap between E and NSO */
+    /* Simple inline-block for natural text flow */
+    display: block;
+    text-align: center;
 
     text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-    line-height: 1;
+    line-height: 1.2;
 }
 
 .hero-tagline {
