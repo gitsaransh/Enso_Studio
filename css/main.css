@@ -409,18 +409,17 @@ section {
 /* Stylized 'E' Construction - Three Bars */
 .stylized-e {
     display: inline-block;
-    width: 0.55em;
-    height: 1em;
+    width: 0.5em;
+    height: 0.75em;
     position: relative;
-    margin-right: 0.1em;
+    margin-right: 0.15em;
     vertical-align: baseline;
-    transform: translateY(-0.05em);
 }
 
 .stylized-e .bar {
     display: block;
     width: 100%;
-    height: 0.12em;
+    height: 0.1em;
     background-color: var(--color-text-primary);
     position: absolute;
     left: 0;
