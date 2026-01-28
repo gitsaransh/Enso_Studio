@@ -412,10 +412,12 @@ section {
     flex-direction: column;
     justify-content: space-between;
     width: 0.55em;
-    height: 0.62em;
-    /* Optimized for Michroma cap-height */
+    height: 0.66em;
+    /* Slightly taller to match Michroma better */
     margin-right: 0.15em;
     flex-shrink: 0;
+    transform: translateY(0.06em);
+    /* Nudges the bars down for optical alignment */
 }
 
 .stylized-e .bar {
