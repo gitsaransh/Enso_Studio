@@ -412,16 +412,15 @@ section {
     /* Changed to flex column for internal bar distribution */
     flex-direction: column;
     justify-content: space-between;
-    height: 0.72em;
-    /* Slightly taller to match cap height */
+    height: 0.68em;
+    /* Adjusted height to match font cap-height better */
     width: 0.6em;
-    margin-right: 0;
-    /* Gap handles spacing now */
+    margin-right: 0.1em;
+    /* Small manual gap */
     vertical-align: middle;
-    /* Better than baseline for icon-like alignment */
     position: relative;
-    top: -0.05em;
-    /* Nudge up slightly visually */
+    top: 0;
+    /* Reset top offset */
 }
 
 .stylized-e .bar {
@@ -445,6 +444,8 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 0.15em;
+    /* Explicit gap between E and NSO */
 
     text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
     line-height: 1;
