@@ -4,7 +4,8 @@
 
 A modern, minimal, and aesthetic portfolio website showcasing ENSO Studio's projects, philosophy, and capabilities.
 
-![ENSO Studio](https://img.shields.io/badge/status-live-success)
+![ENSO Studio](https://img.shields.io/website?url=https%3A%2F%2Fgitsaransh.github.io%2FEnso_Studio)
+[View Live Site](https://gitsaransh.github.io/Enso_Studio/)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 ## 🌟 Features
