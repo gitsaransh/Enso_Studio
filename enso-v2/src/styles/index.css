@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Primary Colors */
+        --color-primary: #00ffff;
+        /* cyan-500 - Neon cyan energy */
+        --color-primary-foreground: #0f0f0f;
+        /* gray-950 - Deep charcoal for contrast */
+
+        /* Secondary Colors */
+        --color-secondary: #20b2aa;
+        /* teal-500 - Sea-green wisdom */
+        --color-secondary-foreground: #ffffff;
+        /* white */
+
+        /* Accent Colors */
+        --color-accent: #ff6b35;
+        /* orange-500 - Warm coral spark */
+        --color-accent-foreground: #ffffff;
+        /* white */
+
+        /* Background Colors */
+        --color-background: #0f0f0f;
+        /* gray-950 - Deep charcoal foundation */
+        --color-foreground: #ffffff;
+        /* white - Pure white clarity */
+
+        /* Surface Colors */
+        --color-card: #1a1a1a;
+        /* gray-900 - Elevated charcoal */
+        --color-card-foreground: #ffffff;
+        /* white */
+
+        /* Popover Colors */
+        --color-popover: #1a1a1a;
+        /* gray-900 */
+        --color-popover-foreground: #ffffff;
+        /* white */
+
+        /* Muted Colors */
+        --color-muted: #2a2a2a;
+        /* gray-800 */
+        --color-muted-foreground: #a0a0a0;
+        /* gray-400 - Soft gray hierarchy */
+
+        /* Border & Input */
+        --color-border: #00ffff;
+        /* cyan-500 - Primary cyan */
+        --color-input: #2a2a2a;
+        /* gray-800 */
+        --color-ring: #00ffff;
+        /* cyan-500 */
+
+        /* State Colors */
+        --color-success: #00ff88;
+        /* green-400 - Bright success green */
+        --color-success-foreground: #0f0f0f;
+        /* gray-950 */
+
+        --color-warning: #ffaa00;
+        /* amber-500 - Focused amber */
+        --color-warning-foreground: #0f0f0f;
+        /* gray-950 */
+
+        --color-error: #ff4444;
+        /* red-500 - Clear error red */
+        --color-error-foreground: #ffffff;
+        /* white */
+
+        --color-destructive: #ff4444;
+        /* red-500 */
+        --color-destructive-foreground: #ffffff;
+        /* white */
+
+        /* Spacing & Layout */
+        --radius: 0.5rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Source Sans 3', sans-serif;
+        font-weight: 400;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 700;
+    }
+
+    button,
+    .btn {
+        font-family: 'Rajdhani', sans-serif;
+        font-weight: 600;
+    }
+
+    code,
+    pre {
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: 400;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    .glow-primary {
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+
+    .glow-secondary {
+        box-shadow: 0 0 20px rgba(32, 178, 170, 0.3);
+    }
+
+    .glow-accent {
+        box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+    }
+
+    .transition-zen {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .transition-zen-slow {
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes enso-rotate {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .animate-enso-rotate {
+        animation: enso-rotate 10s linear infinite;
+    }
+
+    @keyframes glow-pulse {
+
+        0%,
+        100% {
+            opacity: 0.3;
+        }
+
+        50% {
+            opacity: 0.6;
+        }
+    }
+
+    .animate-glow-pulse {
+        animation: glow-pulse 2s ease-in-out infinite;
+    }
+}
