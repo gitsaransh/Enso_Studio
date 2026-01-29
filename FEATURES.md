@@ -24,9 +24,7 @@
 - Interactive modal system for each project
 - Detailed case studies for all 6 projects:
   - **MindSpark** - Daily brain training puzzle game
-  - **Daily Aesthetic** - Curated aesthetic inspiration app
-    - **ReelsReward** - Gamified content consumption (In Progress)
-  - **Viraaj Editor** - Privacy-first encrypted editor (In Progress)
+  - **Daily Aesthetic** - Curated aesthetic inspiration app (In Progress)
   - **Flow Automation** - Intelligent workflow automation (Experiment)
   - **Insight AI** - AI-powered analytics tool (Experiment)
 
