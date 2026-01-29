@@ -5,128 +5,78 @@
 A modern, minimal, and aesthetic portfolio website showcasing ENSO Studio's projects, philosophy, and capabilities.
 
 ![ENSO Studio](https://img.shields.io/website?url=https%3A%2F%2Fgitsaransh.github.io%2FEnso_Studio)
-[View Live Site](https://gitsaransh.github.io/Enso_Studio/)
-![License](https://img.shields.io/badge/license-MIT-blue)
+[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-## 🌟 Features
+## 🚨 Versions
 
-- **🎨 Dual Theme Support** - Seamless dark/light mode with persistent preferences
-- **📱 Fully Responsive** - Optimized for all devices and screen sizes
-- **⚡ Interactive Case Studies** - Detailed project breakdowns in elegant modals
-- **💬 Testimonials** - Client feedback with engaging animations
-- **🎭 Smooth Animations** - Parallax effects, fade-ins, and micro-interactions
-- **♿ Accessible** - Keyboard navigation and ARIA labels throughout
-- **🚀 Performance Optimized** - Zero dependencies, GPU-accelerated animations
+This repository contains two versions of the ENSO Studio website:
 
-## 🛠️ Tech Stack
+### **v2: Next.js + Tailwind CSS (Current)**
+*   **Folder**: [`enso-v2/`](./enso-v2)
+*   **Tech**: Next.js 15, React 19, Tailwind CSS v3.
+*   **Live Site**: **[gitsaransh.github.io/Enso_Studio](https://gitsaransh.github.io/Enso_Studio/)**
+*   **Status**: Active, deployed via GitHub Actions.
 
-- **HTML5** - Semantic markup with SEO best practices
-- **CSS3** - Custom properties, Grid, Flexbox, animations
-- **Vanilla JavaScript** - No frameworks, pure ES6+
-- **Progressive Enhancement** - Works without JavaScript
+### **v1: HTML + CSS (Legacy)**
+*   **Folder**: Root directory (`index.html`, `css/`, `js/`)
+*   **Tech**: Vanilla HTML5, CSS3, JavaScript.
+*   **Status**: Legacy / Archived.
 
-## 🎯 Sections
+---
 
-1. **Hero** - Animated ENSO symbol with theme toggle
-2. **Philosophy** - Studio approach and values
-3. **Services** - What we build (Apps, Games, AI Tools, Automation)
-4. **Work** - Portfolio with interactive case studies
-5. **Testimonials** - Client feedback and reviews
-6. **Studio Credit** - Branding information
-7. **Footer** - Contact and navigation
+## 🚀 Getting Started (v2)
 
-## 🚀 Quick Start
+To work on the current version of the site:
 
-### View Locally
+1.  Navigate to the v2 directory:
+    ```bash
+    cd enso-v2
+    ```
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/Enso_Studio.git
-   cd Enso_Studio
-   ```
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
 
-2. Open with a local server:
-   ```bash
-   # Python 3
-   python -m http.server 8000
-   
-   # Or simply open index.html in your browser
-   ```
+3.  Run the development server:
+    ```bash
+    npm run dev
+    ```
 
-3. Visit `http://localhost:8000`
+4.  Open [http://localhost:3000](http://localhost:3000)
 
-### Deploy
+## 🛠️ Tech Stack (v2)
 
-This is a static website and can be deployed to:
-- **GitHub Pages** (recommended)
-- **Netlify**
-- **Vercel**
-- **Cloudflare Pages**
+-   **Framework**: Next.js 15 (App Router)
+-   **Styling**: Tailwind CSS
+-   **Icons**: Heroicons (Dynamic import)
+-   **Deployment**: GitHub Pages (Static Export)
+-   **Animation**: Native CSS animations + Tailwind utilities
 
 ## 📂 Project Structure
 
 ```
 Enso_Studio/
-├── index.html          # Main HTML file
-├── css/
-│   └── main.css        # All styles and themes
-├── js/
-│   └── main.js         # Interactive functionality
-├── FEATURES.md         # Detailed feature documentation
-└── README.md           # This file
+├── enso-v2/                # ✨ NEW Version (Next.js)
+│   ├── src/
+│   │   ├── app/            # App router pages
+│   │   ├── components/     # Reusable components
+│   │   │   ├── common/     # Header, Footer, Logo
+│   │   │   ├── sections/   # Hero, Philosophy, Work, etc.
+│   │   │   └── ui/         # Base UI elements (Icons)
+│   │   └── styles/         # Global styles
+│   ├── public/             # Static assets
+│   └── ...config files     # Next.js, Tailwind, etc.
+│
+├── index.html              # 👴 Legacy Version (HTML)
+├── css/                    # Legacy styles
+├── js/                     # Legacy scripts
+└── ...
 ```
-
-## 🎨 Customization
-
-### Change Theme Colors
-
-Edit CSS custom properties in `css/main.css`:
-
-```css
-:root {
-    --color-accent: #00d4ff;        /* Primary accent color */
-    --color-bg-primary: #0a0a0a;    /* Background color */
-    /* ... more variables */
-}
-```
-
-### Update Projects
-
-Edit the `caseStudies` object in `js/main.js`:
-
-```javascript
-const caseStudies = {
-    'your-project': {
-        title: 'Your Project',
-        subtitle: 'Project description',
-        tags: ['Tag1', 'Tag2'],
-        sections: [...]
-    }
-};
-```
-
-### Modify Testimonials
-
-Update the testimonials section in `index.html`.
-
-## 📱 Browser Support
-
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
 
 ## 📄 License
 
 MIT License - feel free to use this for your own portfolio!
-
-## 🤝 Contributing
-
-This is a personal portfolio, but suggestions and improvements are welcome via issues.
-
-## 📧 Contact
-
-For collaborations or inquiries: contact@ensostudio.com
 
 ---
 
