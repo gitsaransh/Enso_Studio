@@ -1,7 +1,7 @@
 'use client';
 
 import Icon from '@/components/ui/AppIcon';
-
+import Link from 'next/link';
 import { PROJECTS } from '@/constants/data';
 
 const Work = () => {
@@ -48,7 +48,9 @@ const Work = () => {
                             </p>
 
                             <div className="flex items-center text-sm font-semibold text-foreground group-hover:text-accent transition-zen">
-                                View Case Study <Icon name="ArrowRightIcon" size={16} className="ml-2 transform group-hover:translate-x-1 transition-zen" />
+                                <Link href={`/work/${project.id}`} className="flex items-center">
+                                    View Case Study <Icon name="ArrowRightIcon" size={16} className="ml-2 transform group-hover:translate-x-1 transition-zen" />
+                                </Link>
                             </div>
 
                             {/* Hover Glow Effect */}

@@ -1,9 +1,9 @@
 
 export const NAVIGATION_ITEMS = [
-    { label: 'Philosophy', href: '#philosophy', icon: 'SparklesIcon' },
-    { label: 'Services', href: '#services', icon: 'CubeIcon' },
-    { label: 'Work', href: '#work', icon: 'BriefcaseIcon' },
-    { label: 'Credit', href: '#credit', icon: 'TagIcon' },
+    { label: 'Philosophy', href: '/#philosophy', icon: 'SparklesIcon' },
+    { label: 'Services', href: '/#services', icon: 'CubeIcon' },
+    { label: 'Work', href: '/#work', icon: 'BriefcaseIcon' },
+    { label: 'Credit', href: '/#credit', icon: 'TagIcon' },
 ];
 
 export const CONTACT_ITEM = {
@@ -47,7 +47,7 @@ export const TESTIMONIALS = [
         role: "Product Manager, TechVentures"
     },
     {
-        quote: "Working with ENSO Studio was seamless. They understand the balance between aesthetics and functionality, creating products that users love.",
+        quote: "Working with ENSO Studio was seamless. Their team understands the balance between aesthetics and functionality, creating products that users love.",
         author: "Marcus Rodriguez",
         role: "Founder, CreativeFlow"
     },
@@ -63,32 +63,68 @@ export const PROJECTS = [
         id: 'mindspark',
         title: 'MindSpark',
         category: 'Game',
-        description: 'Daily brain training through lateral thinking puzzles.',
+        description: 'Daily brain training through lateral thinking puzzles. A minimalist design approach to cognitive enhancement.',
         status: 'Live',
-        statusColor: 'text-success border-success/30 bg-success/10'
+        statusColor: 'text-success border-success/30 bg-success/10',
+        longDescription: 'MindSpark reimagines daily brain training with a focus on lateral thinking and pattern recognition. Designed with a calming, minimalist interface, it strips away gamification clutter to let the puzzles shine. The app adapts to the user\'s skill level, offering a personalized daily workout for the mind.',
+        technologies: ['React Native', 'TypeScript', 'Node.js', 'Firebase'],
+        role: 'Full Stack Development, UI/UX Design',
+        features: [
+            'Daily generated puzzles',
+            'Adaptive difficulty algorithm',
+            'Offline mode support',
+            'Performance analytics dashboard'
+        ]
     },
     {
         id: 'daily-aesthetic',
         title: 'Daily Aesthetic',
         category: 'App',
-        description: 'Curated daily aesthetic inspiration and mood boards.',
+        description: 'Curated daily aesthetic inspiration and mood boards. Start your creative day with focus.',
         status: 'In Progress',
-        statusColor: 'text-warning border-warning/30 bg-warning/10'
+        statusColor: 'text-warning border-warning/30 bg-warning/10',
+        longDescription: 'A digital sanctuary for designers and creatives. Daily Aesthetic delivers one perfectly curated mood board every morning. No infinite scroll, no algorithms—just pure, focused inspiration to jumpstart the creative process.',
+        technologies: ['Next.js', 'Tailwind CSS', 'Supabase', 'Framer Motion'],
+        role: 'Frontend Engineering, concept',
+        features: [
+            'Daily curated feed',
+            'Save to collections',
+            'Color palette extraction',
+            'Minimalist read mode'
+        ]
     },
     {
         id: 'flow-automation',
         title: 'Flow Automation',
         category: 'Automation',
-        description: 'Intelligent workflow automation for repetitive tasks.',
+        description: 'Intelligent workflow automation for repetitive tasks. Reclaim your time.',
         status: 'Experiment',
-        statusColor: 'text-accent border-accent/30 bg-accent/10'
+        statusColor: 'text-accent border-accent/30 bg-accent/10',
+        longDescription: 'An internal tool turned product experiment. Flow Automation connects disconnected APIs to automate complex, multi-step workflows. It focuses on reliability and "set and forget" architecture for small teams.',
+        technologies: ['Python', 'FastAPI', 'Docker', 'AWS Lambda'],
+        role: 'Backend Architecture',
+        features: [
+            'Visual workflow builder',
+            'Webhook integration',
+            'Real-time error logging',
+            'Custom script execution'
+        ]
     },
     {
         id: 'insight-ai',
         title: 'Insight AI',
         category: 'AI Tool',
-        description: 'AI-powered analytics and insight generation tool.',
+        description: 'AI-powered analytics and insight generation tool. Data to wisdom in seconds.',
         status: 'Experiment',
-        statusColor: 'text-accent border-accent/30 bg-accent/10'
+        statusColor: 'text-accent border-accent/30 bg-accent/10',
+        longDescription: 'Insight AI leverages large language models to process unstructured customer feedback and turn it into actionable product insights. It identifies trends, sentiment, and feature requests automatically.',
+        technologies: ['OpenAI API', 'React', 'Python', 'PostgreSQL'],
+        role: 'AI Integration, Full Stack',
+        features: [
+            'Sentiment analysis',
+            'Topic clustering',
+            'Automated reporting',
+            'Natural language query interface'
+        ]
     }
 ];
