@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
     output: 'export',
-    basePath: '/Enso_Studio',
+    basePath: isProd ? '/Enso_Studio' : '',
     images: {
         unoptimized: true,
     },
