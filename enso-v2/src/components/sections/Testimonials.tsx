@@ -2,24 +2,10 @@
 
 import Icon from '@/components/ui/AppIcon';
 
+import { TESTIMONIALS } from '@/constants/data';
+import { IconName } from '@/components/ui/AppIcon';
+
 const Testimonials = () => {
-    const testimonials = [
-        {
-            quote: "ENSO Studio delivered a polished, engaging puzzle game that exceeded our expectations. Their focus on user experience and clean design is exceptional.",
-            author: "Sarah Chen",
-            role: "Product Manager, TechVentures"
-        },
-        {
-            quote: "Working with ENSO Studio was seamless. They understand the balance between aesthetics and functionality, creating products that users love.",
-            author: "Marcus Rodriguez",
-            role: "Founder, CreativeFlow"
-        },
-        {
-            quote: "Their systematic approach to development and commitment to quality made our collaboration productive and stress-free. Highly recommended.",
-            author: "Priya Sharma",
-            role: "CEO, InnovateLabs"
-        }
-    ];
 
     return (
         <section id="testimonials" className="py-20 bg-card/30 border-y border-input/50">
@@ -31,13 +17,13 @@ const Testimonials = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {testimonials.map((testimonial, index) => (
+                    {TESTIMONIALS.map((testimonial, index) => (
                         <div
                             key={index}
                             className="p-8 bg-background border border-input rounded-lg hover:border-primary/30 transition-zen flex flex-col"
                         >
                             <div className="mb-6 opacity-50">
-                                <Icon name="ChatBubbleLeftQuoteIcon" size={32} className="text-primary" />
+                                <Icon name="ChatBubbleLeftEllipsisIcon" size={32} className="text-primary" />
                             </div>
 
                             <blockquote className="flex-grow text-muted-foreground font-source italic leading-relaxed mb-6">

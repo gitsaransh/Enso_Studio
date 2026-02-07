@@ -2,41 +2,9 @@
 
 import Icon from '@/components/ui/AppIcon';
 
+import { PROJECTS } from '@/constants/data';
+
 const Work = () => {
-    const projects = [
-        {
-            id: 'mindspark',
-            title: 'MindSpark',
-            category: 'Game',
-            description: 'Daily brain training through lateral thinking puzzles.',
-            status: 'Live',
-            statusColor: 'text-success border-success/30 bg-success/10'
-        },
-        {
-            id: 'daily-aesthetic',
-            title: 'Daily Aesthetic',
-            category: 'App',
-            description: 'Curated daily aesthetic inspiration and mood boards.',
-            status: 'In Progress',
-            statusColor: 'text-warning border-warning/30 bg-warning/10'
-        },
-        {
-            id: 'flow-automation',
-            title: 'Flow Automation',
-            category: 'Automation',
-            description: 'Intelligent workflow automation for repetitive tasks.',
-            status: 'Experiment',
-            statusColor: 'text-accent border-accent/30 bg-accent/10'
-        },
-        {
-            id: 'insight-ai',
-            title: 'Insight AI',
-            category: 'AI Tool',
-            description: 'AI-powered analytics and insight generation tool.',
-            status: 'Experiment',
-            statusColor: 'text-accent border-accent/30 bg-accent/10'
-        }
-    ];
 
     return (
         <section id="work" className="py-20 bg-background">
@@ -56,7 +24,7 @@ const Work = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {projects.map((project) => (
+                    {PROJECTS.map((project) => (
                         <div
                             key={project.id}
                             className="group relative p-8 bg-card border border-input rounded-lg overflow-hidden hover:border-accent/50 transition-zen cursor-pointer"

@@ -4,6 +4,9 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Icon from '@/components/ui/AppIcon';
 
+import { NAVIGATION_ITEMS, CONTACT_ITEM } from '@/constants/data';
+import { IconName } from '@/components/ui/AppIcon';
+
 interface HeaderProps {
     className?: string;
 }
@@ -11,16 +14,6 @@ interface HeaderProps {
 const Header = ({ className = '' }: HeaderProps) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-    // Updated navigation items to match the "Old Section" needs (Anchor links for single page)
-    const navigationItems = [
-        { label: 'Philosophy', href: '#philosophy', icon: 'SparklesIcon' },
-        { label: 'Services', href: '#services', icon: 'CubeIcon' },
-        { label: 'Work', href: '#work', icon: 'BriefcaseIcon' },
-        { label: 'Credit', href: '#credit', icon: 'TagIcon' },
-    ];
-
-    const contactItem = { label: 'Contact', href: 'mailto:contact@ensostudio.com', icon: 'ChatBubbleLeftRightIcon' };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -78,13 +71,13 @@ const Header = ({ className = '' }: HeaderProps) => {
                     </Link>
 
                     <nav className="hidden lg:flex items-center space-x-1">
-                        {navigationItems.map((item) => (
+                        {NAVIGATION_ITEMS.map((item) => (
                             <Link
                                 key={item.href}
                                 href={item.href}
                                 className="flex items-center space-x-2 px-4 py-2 rounded-md text-sm font-source text-muted-foreground hover:text-foreground hover:bg-muted/10 transition-zen group"
                             >
-                                <Icon name={item.icon as any} size={18} className="group-hover:text-primary transition-zen" />
+                                <Icon name={item.icon as IconName} size={18} className="group-hover:text-primary transition-zen" />
                                 <span>{item.label}</span>
                             </Link>
                         ))}
@@ -92,11 +85,11 @@ const Header = ({ className = '' }: HeaderProps) => {
 
                     <div className="hidden lg:block">
                         <Link
-                            href={contactItem.href}
+                            href={CONTACT_ITEM.href}
                             className="flex items-center space-x-2 px-6 py-2 bg-primary text-primary-foreground rounded-md font-rajdhani text-sm font-semibold hover:bg-primary/90 glow-primary hover:shadow-[0_0_30px_rgba(0,255,255,0.5)] transition-zen"
                         >
-                            <Icon name={contactItem.icon as any} size={18} />
-                            <span>{contactItem.label}</span>
+                            <Icon name={CONTACT_ITEM.icon as IconName} size={18} />
+                            <span>{CONTACT_ITEM.label}</span>
                         </Link>
                     </div>
 
@@ -115,25 +108,25 @@ const Header = ({ className = '' }: HeaderProps) => {
                     <div className="fixed inset-0 bg-background/95 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
                     <nav className="fixed top-20 left-0 right-0 bottom-0 bg-card overflow-y-auto border-t border-border">
                         <div className="flex flex-col p-4 space-y-2">
-                            {navigationItems.map((item) => (
+                            {NAVIGATION_ITEMS.map((item) => (
                                 <Link
                                     key={item.href}
                                     href={item.href}
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className="flex items-center space-x-3 px-4 py-4 rounded-md text-lg font-source text-muted-foreground hover:text-foreground hover:bg-muted transition-zen group border-b border-border/10"
                                 >
-                                    <Icon name={item.icon as any} size={24} className="group-hover:text-primary transition-zen" />
+                                    <Icon name={item.icon as IconName} size={24} className="group-hover:text-primary transition-zen" />
                                     <span>{item.label}</span>
                                 </Link>
                             ))}
                             <div className="pt-8 px-4">
                                 <Link
-                                    href={contactItem.href}
+                                    href={CONTACT_ITEM.href}
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className="flex items-center justify-center space-x-2 px-6 py-4 bg-primary text-primary-foreground rounded-md font-rajdhani text-lg font-semibold glow-primary transition-zen w-full"
                                 >
-                                    <Icon name={contactItem.icon as any} size={24} />
-                                    <span>{contactItem.label}</span>
+                                    <Icon name={CONTACT_ITEM.icon as IconName} size={24} />
+                                    <span>{CONTACT_ITEM.label}</span>
                                 </Link>
                             </div>
                         </div>

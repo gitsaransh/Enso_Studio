@@ -6,7 +6,7 @@ import * as SolidIcons from '@heroicons/react/24/solid';
 export type IconName = keyof typeof Icons;
 
 interface AppIconProps {
-    name: IconName | string;
+    name: IconName;
     size?: number;
     className?: string;
     solid?: boolean;
@@ -14,8 +14,7 @@ interface AppIconProps {
 
 const AppIcon = ({ name, size = 24, className = '', solid = false }: AppIconProps) => {
     const IconSet = solid ? SolidIcons : Icons;
-    // @ts-ignore
-    const IconComponent = IconSet[name];
+    const IconComponent = IconSet[name as keyof typeof IconSet];
 
     if (!IconComponent) {
         console.warn(`Icon "${name}" not found`);
