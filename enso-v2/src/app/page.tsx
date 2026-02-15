@@ -4,6 +4,7 @@ import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import EnsoAnimation from '@/components/EnsoAnimation';
 import Philosophy from '@/components/sections/Philosophy';
+import About from '@/components/sections/About';
 import Services from '@/components/sections/Services';
 import Work from '@/components/sections/Work';
 import Testimonials from '@/components/sections/Testimonials';
@@ -48,6 +49,7 @@ export default function Home() {
                 <Philosophy />
                 <Services />
                 <Work />
+                <About />
                 <Testimonials />
                 <StudioCredit />
 

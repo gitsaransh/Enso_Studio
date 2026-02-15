@@ -18,9 +18,7 @@ const Work = () => {
                             A collection of our live products, experiments, and ongoing developments.
                         </p>
                     </div>
-                    <a href="#" className="hidden md:flex items-center text-primary hover:text-primary/80 font-rajdhani font-semibold transition-zen uppercase tracking-wider">
-                        View All Projects <Icon name="ArrowRightIcon" size={16} className="ml-2" />
-                    </a>
+
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -33,7 +31,7 @@ const Work = () => {
                                 <div>
                                     <span className="text-sm font-jetbrains text-muted-foreground uppercase tracking-widest mb-2 block">
                                         {project.category}
-                                    </span>
+                                        x   </span>
                                     <h3 className="text-2xl font-orbitron font-bold text-foreground group-hover:text-accent transition-zen">
                                         {project.title}
                                     </h3>
@@ -48,9 +46,9 @@ const Work = () => {
                             </p>
 
                             <div className="flex items-center text-sm font-semibold text-foreground group-hover:text-accent transition-zen">
-                                <Link href={`/work/${project.id}`} className="flex items-center">
-                                    View Case Study <Icon name="ArrowRightIcon" size={16} className="ml-2 transform group-hover:translate-x-1 transition-zen" />
-                                </Link>
+                                <span className="flex items-center text-muted-foreground/50 cursor-not-allowed">
+                                    Coming Soon <Icon name="LockClosedIcon" size={16} className="ml-2" />
+                                </span>
                             </div>
 
                             {/* Hover Glow Effect */}
@@ -59,11 +57,7 @@ const Work = () => {
                     ))}
                 </div>
 
-                <div className="mt-12 text-center md:hidden">
-                    <a href="#" className="inline-flex items-center text-primary hover:text-primary/80 font-rajdhani font-semibold transition-zen uppercase tracking-wider">
-                        View All Projects <Icon name="ArrowRightIcon" size={16} className="ml-2" />
-                    </a>
-                </div>
+
             </div>
         </section>
     );

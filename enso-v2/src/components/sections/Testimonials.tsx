@@ -17,6 +17,11 @@ const Testimonials = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="col-span-1 md:col-span-3 text-center mb-8">
+                        <p className="text-xs text-muted-foreground/50 font-source italic">
+                            Sample testimonials for demonstration purposes
+                        </p>
+                    </div>
                     {TESTIMONIALS.map((testimonial, index) => (
                         <div
                             key={index}

@@ -8,7 +8,7 @@ export const NAVIGATION_ITEMS = [
 
 export const CONTACT_ITEM = {
     label: 'Contact',
-    href: 'mailto:contact@ensostudio.com',
+    href: 'mailto:biswalsaransh@gmail.com',
     icon: 'ChatBubbleLeftRightIcon'
 };
 
@@ -64,7 +64,7 @@ export const PROJECTS = [
         title: 'MindSpark',
         category: 'Game',
         description: 'Daily brain training through lateral thinking puzzles. A minimalist design approach to cognitive enhancement.',
-        status: 'Live',
+        status: 'In Development',
         statusColor: 'text-success border-success/30 bg-success/10',
         longDescription: 'MindSpark reimagines daily brain training with a focus on lateral thinking and pattern recognition. Designed with a calming, minimalist interface, it strips away gamification clutter to let the puzzles shine. The app adapts to the user\'s skill level, offering a personalized daily workout for the mind.',
         technologies: ['React Native', 'TypeScript', 'Node.js', 'Firebase'],
@@ -80,27 +80,27 @@ export const PROJECTS = [
         id: 'daily-aesthetic',
         title: 'Daily Aesthetic',
         category: 'App',
-        description: 'Curated daily aesthetic inspiration and mood boards. Start your creative day with focus.',
-        status: 'In Progress',
+        description: 'Visual purity for the chaotic mind. A curated daily aesthetic feed.',
+        status: 'In Development',
         statusColor: 'text-warning border-warning/30 bg-warning/10',
-        longDescription: 'A digital sanctuary for designers and creatives. Daily Aesthetic delivers one perfectly curated mood board every morning. No infinite scroll, no algorithms—just pure, focused inspiration to jumpstart the creative process.',
+        longDescription: 'In an era of infinite scroll and algorithmic noise, Daily Aesthetic offers a sanctuary. A single, perfectly curated mood board delivered each morning. No distractions, no endless feeds—just pure, intentional visual harmony designed to reset your creative baseline before the work begins.',
         technologies: ['Next.js', 'Tailwind CSS', 'Supabase', 'Framer Motion'],
         role: 'Frontend Engineering, concept',
         features: [
-            'Daily curated feed',
-            'Save to collections',
+            'No-scroll interface',
+            'Daily curated mood board',
             'Color palette extraction',
-            'Minimalist read mode'
+            'Zen mode'
         ]
     },
     {
         id: 'flow-automation',
         title: 'Flow Automation',
         category: 'Automation',
-        description: 'Intelligent workflow automation for repetitive tasks. Reclaim your time.',
-        status: 'Experiment',
+        description: 'Silence the repetitive. Amplify the creative. Intelligent workflow automation.',
+        status: 'In Development',
         statusColor: 'text-accent border-accent/30 bg-accent/10',
-        longDescription: 'An internal tool turned product experiment. Flow Automation connects disconnected APIs to automate complex, multi-step workflows. It focuses on reliability and "set and forget" architecture for small teams.',
+        longDescription: 'Human potential is wasted on the mundane. Flow Automation is an invisible infrastructure that weaves together disconnected digital tools. It operates in the background, handling complex, multi-step workflows with biological precision, liberating teams from administrative friction.',
         technologies: ['Python', 'FastAPI', 'Docker', 'AWS Lambda'],
         role: 'Backend Architecture',
         features: [
@@ -115,7 +115,7 @@ export const PROJECTS = [
         title: 'Insight AI',
         category: 'AI Tool',
         description: 'AI-powered analytics and insight generation tool. Data to wisdom in seconds.',
-        status: 'Experiment',
+        status: 'In Development',
         statusColor: 'text-accent border-accent/30 bg-accent/10',
         longDescription: 'Insight AI leverages large language models to process unstructured customer feedback and turn it into actionable product insights. It identifies trends, sentiment, and feature requests automatically.',
         technologies: ['OpenAI API', 'React', 'Python', 'PostgreSQL'],

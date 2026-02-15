@@ -1,10 +1,46 @@
 
 import { PROJECTS } from '@/constants/data';
+import { Metadata } from 'next';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import Icon from '@/components/ui/AppIcon';
 import Link from 'next/link';
 import React from 'react';
+
+
+// Generate metadata for each project page
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ id: string }>
+}): Promise<Metadata> {
+    const { id } = await params;
+    const project = PROJECTS.find((p) => p.id === id);
+
+    if (!project) {
+        return {
+            title: 'Project Not Found | Enso Studio',
+            description: 'The requested project could not be found.',
+        };
+    }
+
+    return {
+        title: project.title,
+        description: project.longDescription || project.description,
+        openGraph: {
+            title: `${project.title} | Enso Studio`,
+            description: project.longDescription || project.description,
+            type: 'website',
+            // images: project.image ? [{ ... }] : [], // Uncomment when images are added to data
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${project.title} | Enso Studio`,
+            description: project.longDescription || project.description,
+            // images: project.image ? [project.image] : [], // Uncomment when images are added to data
+        },
+    };
+}
 
 // This is correct for Next.js 15+ App Router
 export default async function ProjectPage({
