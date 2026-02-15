@@ -37,6 +37,11 @@ export const SERVICES = [
         title: 'Experiments',
         description: 'Controlled product explorations and R&D.',
         icon: 'BeakerIcon'
+    },
+    {
+        title: 'Web Platforms',
+        description: 'High-performance, responsive web applications tailored for speed and visual impact.',
+        icon: 'GlobeAltIcon'
     }
 ];
 
