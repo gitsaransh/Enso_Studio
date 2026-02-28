@@ -66,6 +66,23 @@ export const TESTIMONIALS = [
 
 export const PROJECTS = [
     {
+        id: 'zeno-sudoku',
+        title: 'Zeno Sudoku',
+        category: 'Game',
+        description: 'A minimal, elegant Sudoku experience built on Jetpack Compose. Focused on deep concentration and visual harmony.',
+        status: 'Ready for Release',
+        statusColor: 'text-success border-success/30 bg-success/10',
+        longDescription: 'Zeno Sudoku is a dedicated puzzle experience that prioritizes clarity and flow. It features five difficulty levels, a deterministic daily challenge, and a refined aesthetic inspired by parchment and ink.',
+        technologies: ['Kotlin', 'Jetpack Compose', 'Hilt', 'Room'],
+        role: 'Android Engineering, UI/UX Design',
+        features: [
+            'Five difficulty levels',
+            'Daily global challenges',
+            'Offline progression sync',
+            'Zeno Pro premium experience'
+        ]
+    },
+    {
         id: 'mindspark',
         title: 'MindSpark',
         category: 'Game',
