@@ -31,7 +31,7 @@ const Work = () => {
                                 <div>
                                     <span className="text-sm font-jetbrains text-muted-foreground uppercase tracking-widest mb-2 block">
                                         {project.category}
-                                        x   </span>
+                                    </span>
                                     <h3 className="text-2xl font-orbitron font-bold text-foreground group-hover:text-accent transition-zen">
                                         {project.title}
                                     </h3>
