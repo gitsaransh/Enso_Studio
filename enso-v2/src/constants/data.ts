@@ -3,6 +3,7 @@ export const NAVIGATION_ITEMS = [
     { label: 'Philosophy', href: '/#philosophy', icon: 'SparklesIcon' },
     { label: 'Services', href: '/#services', icon: 'CubeIcon' },
     { label: 'Work', href: '/#work', icon: 'BriefcaseIcon' },
+    { label: 'Products', href: '/#products', icon: 'ShoppingBagIcon' },
     { label: 'Credit', href: '/#credit', icon: 'TagIcon' },
 ];
 
@@ -131,5 +132,42 @@ export const PROJECTS = [
             'Automated reporting',
             'Natural language query interface'
         ]
+    }
+];
+
+export const PRODUCTS = [
+    {
+        id: 'efficiency-tracker',
+        title: 'System Efficiency Tracker',
+        category: 'Excel Template',
+        description: 'A high-performance Excel dashboard designed for tracking team productivity and bottleneck identification.',
+        price: '29',
+        status: 'Available',
+        statusColor: 'text-success border-success/30 bg-success/10',
+        longDescription: 'The System Efficiency Tracker is built for managers who value clarity over complexity. It transforms raw project data into actionable insights through localized automation within Excel.',
+        features: [
+            'Automated KPI calculation',
+            'Dynamic chart engine',
+            'No VBA required',
+            'Easy data import'
+        ],
+        link: '#'
+    },
+    {
+        id: 'workflow-blueprint',
+        title: 'Studio Workflow Kit',
+        category: 'Digital Asset',
+        description: 'A collection of standard operating procedures and Notion templates for creative studios and solo devs.',
+        price: '49',
+        status: 'Available',
+        statusColor: 'text-success border-success/30 bg-success/10',
+        longDescription: 'The same internal systems we use at Enso Studio. Includes project onboarding, feedback loops, and automated invoicing templates.',
+        features: [
+            'Notion templates',
+            'Protocol documentation',
+            'Automation scripts',
+            'Communication guides'
+        ],
+        link: '#'
     }
 ];
