@@ -19,8 +19,14 @@ export default function Home() {
             <main className="flex-grow flex flex-col relative pt-16">
 
                 {/* Hero Section */}
-                <section id="hero" className="w-full max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-20 min-h-[calc(100vh-64px)]">
-                    <div className="order-2 lg:order-1 space-y-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+                <section
+                    id="hero"
+                    className="relative z-10 w-full max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center py-20 min-h-[calc(100vh-64px)]"
+                >
+                    <div
+                        className="order-2 lg:order-1 space-y-8 animate-fade-in"
+                        style={{ animationDelay: '0.1s', opacity: 0 }}
+                    >
                         <div>
                             <h1 className="text-4xl lg:text-7xl font-orbitron font-bold text-foreground leading-tight mb-6">
                                 ENSO <br className="hidden lg:block" />
@@ -35,25 +41,41 @@ export default function Home() {
                         </div>
 
                         <div className="flex flex-wrap gap-4 pt-4">
-                            <a href="#work" className="px-8 py-4 bg-primary text-primary-foreground rounded-md font-rajdhani text-lg font-bold hover:bg-primary/90 glow-primary transition-zen shadow-[0_0_20px_rgba(0,255,255,0.3)]">
+                            <a
+                                href="#work"
+                                className="px-8 py-4 bg-primary text-primary-foreground rounded-md font-rajdhani text-lg font-bold hover:bg-primary/90 glow-primary transition-zen shadow-[0_0_20px_rgba(0,255,255,0.3)] hover:shadow-[0_0_40px_rgba(0,255,255,0.5)]"
+                                data-cursor-hover
+                            >
                                 VIEW WORK
+                            </a>
+                            <a
+                                href="#services"
+                                className="px-8 py-4 border border-primary/50 text-primary rounded-md font-rajdhani text-lg font-bold hover:bg-primary/10 transition-zen"
+                                data-cursor-hover
+                            >
+                                OUR SERVICES
                             </a>
                         </div>
                     </div>
 
-                    <div className="order-1 lg:order-2 flex justify-center items-center h-[400px] lg:h-[600px] animate-fade-in">
-                        <EnsoAnimation />
+                    <div
+                        className="order-1 lg:order-2 flex justify-center items-center h-[360px] lg:h-[500px] animate-fade-in"
+                        style={{ animationDelay: '0.3s' }}
+                    >
+                        <EnsoAnimation size={380} />
                     </div>
                 </section>
 
-                {/* Sections */}
-                <Philosophy />
-                <Services />
-                <Work />
-                <Products />
-                <About />
-                <Testimonials />
-                <StudioCredit />
+                {/* Rest of the page — add z-10 to ensure above particle canvas */}
+                <div className="relative z-10">
+                    <Philosophy />
+                    <Services />
+                    <Work />
+                    <Products />
+                    <About />
+                    <Testimonials />
+                    <StudioCredit />
+                </div>
 
             </main>
 

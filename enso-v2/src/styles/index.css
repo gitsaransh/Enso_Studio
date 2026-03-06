@@ -3,6 +3,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
 
+/* === Custom Cursor === */
+body {
+    cursor: none;
+}
+
+@media (hover: none) {
+    body {
+        cursor: auto;
+    }
+
+    .custom-cursor,
+    .cursor-follower {
+        display: none !important;
+    }
+}
+
+.custom-cursor {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #00ffcc;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+    mix-blend-mode: difference;
+    will-change: transform;
+}
+
+.cursor-follower {
+    width: 8px;
+    height: 8px;
+    background: #00ffcc;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    will-change: transform;
+}
+
+.custom-cursor.cursor-hover {
+    width: 36px;
+    height: 36px;
+    border-color: #ff6b35;
+}
+
+.cursor-follower.cursor-hover {
+    width: 12px;
+    height: 12px;
+    background: #ff6b35;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -172,5 +230,53 @@
 
     .animate-glow-pulse {
         animation: glow-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fade-in 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    @keyframes ripple {
+        0% {
+            transform: scale(1);
+            opacity: 0.6;
+        }
+
+        100% {
+            transform: scale(1.6);
+            opacity: 0;
+        }
+    }
+
+    .animate-ripple {
+        animation: ripple 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    @keyframes float-gentle {
+
+        0%,
+        100% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-12px);
+        }
+    }
+
+    .animate-float {
+        animation: float-gentle 4s ease-in-out infinite;
     }
 }

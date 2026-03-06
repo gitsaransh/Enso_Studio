@@ -1,6 +1,8 @@
 import React from 'react';
 import type { Metadata, Viewport } from 'next';
 import '../styles/index.css';
+import CustomCursor from '@/components/CustomCursor';
+import ParticleBackground from '@/components/ParticleBackground';
 
 export const viewport: Viewport = {
     width: 'device-width',
@@ -48,6 +50,8 @@ export default function RootLayout({
                 className="bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground"
                 suppressHydrationWarning
             >
+                <CustomCursor />
+                <ParticleBackground />
                 {children}
             </body>
         </html>
