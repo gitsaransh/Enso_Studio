@@ -86,7 +86,7 @@ const Header = ({ className = '' }: HeaderProps) => {
                     <div className="hidden lg:block">
                         <Link
                             href={CONTACT_ITEM.href}
-                            className="flex items-center space-x-2 px-6 py-2 bg-primary text-primary-foreground rounded-md font-rajdhani text-sm font-semibold hover:bg-primary/90 glow-primary hover:shadow-[0_0_30px_rgba(0,255,255,0.5)] transition-zen"
+                            className="btn-glass px-6 py-2 text-sm"
                         >
                             <Icon name={CONTACT_ITEM.icon as IconName} size={18} />
                             <span>{CONTACT_ITEM.label}</span>
@@ -123,7 +123,7 @@ const Header = ({ className = '' }: HeaderProps) => {
                                 <Link
                                     href={CONTACT_ITEM.href}
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="flex items-center justify-center space-x-2 px-6 py-4 bg-primary text-primary-foreground rounded-md font-rajdhani text-lg font-semibold glow-primary transition-zen w-full"
+                                    className="btn-glass w-full justify-center px-6 py-4 text-lg"
                                 >
                                     <Icon name={CONTACT_ITEM.icon as IconName} size={24} />
                                     <span>{CONTACT_ITEM.label}</span>

@@ -59,7 +59,7 @@ export default async function ProjectPage({
                 <div className="flex-grow flex flex-col items-center justify-center text-foreground">
                     <h1 className="text-4xl font-orbitron mb-4">404</h1>
                     <p className="font-source text-muted-foreground">Project not found.</p>
-                    <Link href="/" className="mt-8 px-6 py-2 bg-primary text-primary-foreground rounded-md font-rajdhani transition-zen hover:shadow-lg">
+                    <Link href="/" className="btn-glass mt-8 px-6 py-2">
                         Return Home
                     </Link>
                 </div>

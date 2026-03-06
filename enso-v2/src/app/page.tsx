@@ -43,14 +43,14 @@ export default function Home() {
                         <div className="flex flex-wrap gap-4 pt-4">
                             <a
                                 href="#work"
-                                className="px-8 py-4 bg-primary text-primary-foreground rounded-md font-rajdhani text-lg font-bold hover:bg-primary/90 glow-primary transition-zen shadow-[0_0_20px_rgba(0,255,255,0.3)] hover:shadow-[0_0_40px_rgba(0,255,255,0.5)]"
+                                className="btn-glass px-8 py-4 text-lg"
                                 data-cursor-hover
                             >
                                 VIEW WORK
                             </a>
                             <a
                                 href="#services"
-                                className="px-8 py-4 border border-primary/50 text-primary rounded-md font-rajdhani text-lg font-bold hover:bg-primary/10 transition-zen"
+                                className="btn-glass-secondary px-8 py-4 text-lg"
                                 data-cursor-hover
                             >
                                 OUR SERVICES

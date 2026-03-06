@@ -72,7 +72,7 @@ const Products = () => {
                                             ${product.price}
                                         </span>
                                     </div>
-                                    <button className="flex items-center space-x-3 px-6 py-3 bg-secondary text-secondary-foreground rounded-lg text-sm font-bold glow-secondary hover:shadow-[0_0_20px_rgba(32,178,170,0.4)] transition-zen group-hover:translate-x-1">
+                                    <button className="btn-glass-secondary px-6 py-3 text-sm">
                                         <span>Buy System</span>
                                         <Icon name="ArrowRightIcon" size={16} />
                                     </button>
