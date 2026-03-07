@@ -25,7 +25,7 @@ export default function Home() {
                 >
                     <div
                         className="order-2 lg:order-1 space-y-8 animate-fade-in"
-                        style={{ animationDelay: '0.1s', opacity: 0 }}
+                        style={{ animationDelay: '0.1s' }}
                     >
                         <div>
                             <h1 className="text-4xl lg:text-7xl font-orbitron font-bold text-foreground leading-tight mb-6">
@@ -59,7 +59,7 @@ export default function Home() {
                     </div>
 
                     <div
-                        className="order-1 lg:order-2 flex justify-center items-center h-[360px] lg:h-[500px] animate-fade-in"
+                        className="order-1 lg:order-2 flex justify-center items-center h-[420px] lg:h-[500px] animate-fade-in"
                         style={{ animationDelay: '0.3s' }}
                     >
                         <EnsoAnimation size={380} />

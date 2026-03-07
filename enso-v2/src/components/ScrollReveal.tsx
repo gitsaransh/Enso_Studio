@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
 
 interface UseScrollRevealOptions {
     threshold?: number;
@@ -37,7 +38,7 @@ export const useScrollReveal = (options: UseScrollRevealOptions = {}) => {
 
 // Convenience wrapper component for scroll reveal with staggered children 
 interface ScrollRevealProps {
-    children: React.ReactNode;
+    children: ReactNode;
     className?: string;
     delay?: number; // ms
     direction?: 'up' | 'left' | 'right';

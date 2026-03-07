@@ -1,151 +1,67 @@
+/* === Google Fonts === */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* === Custom Cursor === */
-body {
-    cursor: none;
-}
-
-@media (hover: none) {
-    body {
-        cursor: auto;
-    }
-
-    .custom-cursor,
-    .cursor-follower {
-        display: none !important;
-    }
-}
-
-.custom-cursor {
-    width: 22px;
-    height: 22px;
-    border: 2px solid #00ffcc;
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0;
-    transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
-    mix-blend-mode: difference;
-    will-change: transform;
-}
-
-.cursor-follower {
-    width: 8px;
-    height: 8px;
-    background: #00ffcc;
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0;
-    will-change: transform;
-}
-
-.custom-cursor.cursor-hover {
-    width: 36px;
-    height: 36px;
-    border-color: #ff6b35;
-}
-
-.cursor-follower.cursor-hover {
-    width: 12px;
-    height: 12px;
-    background: #ff6b35;
-}
-
+/* Tailwind directives must come after @import rules */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   BASE LAYER — design tokens, typography defaults
+   ============================================================ */
 @layer base {
     :root {
         /* Primary Colors */
         --color-primary: #00ffff;
-        /* cyan-500 - Neon cyan energy */
         --color-primary-foreground: #0f0f0f;
-        /* gray-950 - Deep charcoal for contrast */
 
         /* Secondary Colors */
         --color-secondary: #20b2aa;
-        /* teal-500 - Sea-green wisdom */
         --color-secondary-foreground: #ffffff;
-        /* white */
 
         /* Accent Colors */
         --color-accent: #ff6b35;
-        /* orange-500 - Warm coral spark */
         --color-accent-foreground: #ffffff;
-        /* white */
 
         /* Background Colors */
         --color-background: #0f0f0f;
-        /* gray-950 - Deep charcoal foundation */
         --color-foreground: #ffffff;
-        /* white - Pure white clarity */
 
         /* Surface Colors */
         --color-card: #1a1a1a;
-        /* gray-900 - Elevated charcoal */
         --color-card-foreground: #ffffff;
-        /* white */
 
         /* Popover Colors */
         --color-popover: #1a1a1a;
-        /* gray-900 */
         --color-popover-foreground: #ffffff;
-        /* white */
 
         /* Muted Colors */
         --color-muted: #2a2a2a;
-        /* gray-800 */
         --color-muted-foreground: #a0a0a0;
-        /* gray-400 - Soft gray hierarchy */
 
         /* Border & Input */
         --color-border: #00ffff;
-        /* cyan-500 - Primary cyan */
         --color-input: #2a2a2a;
-        /* gray-800 */
         --color-ring: #00ffff;
-        /* cyan-500 */
 
         /* State Colors */
         --color-success: #00ff88;
-        /* green-400 - Bright success green */
         --color-success-foreground: #0f0f0f;
-        /* gray-950 */
 
         --color-warning: #ffaa00;
-        /* amber-500 - Focused amber */
         --color-warning-foreground: #0f0f0f;
-        /* gray-950 */
 
         --color-error: #ff4444;
-        /* red-500 - Clear error red */
         --color-error-foreground: #ffffff;
-        /* white */
 
         --color-destructive: #ff4444;
-        /* red-500 */
         --color-destructive-foreground: #ffffff;
-        /* white */
 
         /* Spacing & Layout */
         --radius: 0.5rem;
-    }
-}
-
-@layer base {
-    * {
-        @apply border-border;
     }
 
     body {
@@ -177,107 +93,69 @@ body {
     }
 }
 
-@layer utilities {
-    .text-balance {
-        text-wrap: balance;
+/* ============================================================
+   COMPONENTS LAYER — cursor, reusable component classes
+   (Moved here from the top of the file so Tailwind Preflight
+   runs first and cannot override these rules.)
+   ============================================================ */
+@layer components {
+
+    /* Hide the native cursor globally; restore it on touch devices */
+    body {
+        cursor: none;
     }
 
-    .glow-primary {
-        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-    }
-
-    .glow-secondary {
-        box-shadow: 0 0 20px rgba(32, 178, 170, 0.3);
-    }
-
-    .glow-accent {
-        box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
-    }
-
-    .transition-zen {
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .transition-zen-slow {
-        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    @keyframes enso-rotate {
-        from {
-            transform: rotate(0deg);
+    @media (hover: none) {
+        body {
+            cursor: auto;
         }
 
-        to {
-            transform: rotate(360deg);
+        .custom-cursor,
+        .cursor-follower {
+            display: none !important;
         }
     }
 
-    .animate-enso-rotate {
-        animation: enso-rotate 10s linear infinite;
+    .custom-cursor {
+        width: 22px;
+        height: 22px;
+        border: 2px solid #00ffcc;
+        border-radius: 50%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0;
+        transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+        mix-blend-mode: difference;
+        will-change: transform;
     }
 
-    @keyframes glow-pulse {
-
-        0%,
-        100% {
-            opacity: 0.3;
-        }
-
-        50% {
-            opacity: 0.6;
-        }
+    .cursor-follower {
+        width: 8px;
+        height: 8px;
+        background: #00ffcc;
+        border-radius: 50%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0;
+        will-change: transform;
     }
 
-    .animate-glow-pulse {
-        animation: glow-pulse 2s ease-in-out infinite;
+    .custom-cursor.cursor-hover {
+        width: 36px;
+        height: 36px;
+        border-color: #ff6b35;
     }
 
-    @keyframes fade-in {
-        from {
-            opacity: 0;
-            transform: translateY(16px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .animate-fade-in {
-        animation: fade-in 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-
-    @keyframes ripple {
-        0% {
-            transform: scale(1);
-            opacity: 0.6;
-        }
-
-        100% {
-            transform: scale(1.6);
-            opacity: 0;
-        }
-    }
-
-    .animate-ripple {
-        animation: ripple 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-
-    @keyframes float-gentle {
-
-        0%,
-        100% {
-            transform: translateY(0px);
-        }
-
-        50% {
-            transform: translateY(-12px);
-        }
-    }
-
-    .animate-float {
-        animation: float-gentle 4s ease-in-out infinite;
+    .cursor-follower.cursor-hover {
+        width: 12px;
+        height: 12px;
+        background: #ff6b35;
     }
 
     /* === Glassmorphism Buttons === */
@@ -355,5 +233,122 @@ body {
         border-color: rgba(32, 178, 170, 0.5);
         box-shadow: 0 0 24px rgba(32, 178, 170, 0.2), inset 0 0 12px rgba(32, 178, 170, 0.05);
         transform: translateY(-1px);
+    }
+}
+
+/* ============================================================
+   UTILITIES LAYER — animations, glow helpers, transitions
+   Shared keyframes for enso-rotate / fade-in / glow-pulse
+   are defined HERE only (removed from tailwind.config.js to
+   avoid duplicate definitions with conflicting timings).
+   ============================================================ */
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    /* --- Glow helpers --- */
+    .glow-primary {
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+
+    .glow-secondary {
+        box-shadow: 0 0 20px rgba(32, 178, 170, 0.3);
+    }
+
+    .glow-accent {
+        box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+    }
+
+    /* --- Transition presets --- */
+    .transition-zen {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .transition-zen-slow {
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* --- Enso ring rotation --- */
+    @keyframes enso-rotate {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .animate-enso-rotate {
+        animation: enso-rotate 10s linear infinite;
+    }
+
+    /* --- Glow pulse --- */
+    @keyframes glow-pulse {
+
+        0%,
+        100% {
+            opacity: 0.3;
+        }
+
+        50% {
+            opacity: 0.6;
+        }
+    }
+
+    .animate-glow-pulse {
+        animation: glow-pulse 2s ease-in-out infinite;
+    }
+
+    /* --- Fade-in entrance --- */
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fade-in 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    /* --- Click ripple (EnsoAnimation) --- */
+    @keyframes ripple {
+        0% {
+            transform: scale(1);
+            opacity: 0.6;
+        }
+
+        100% {
+            transform: scale(1.6);
+            opacity: 0;
+        }
+    }
+
+    .animate-ripple {
+        animation: ripple 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    /* --- Gentle float (decorative elements) --- */
+    @keyframes float-gentle {
+
+        0%,
+        100% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-12px);
+        }
+    }
+
+    .animate-float {
+        animation: float-gentle 4s ease-in-out infinite;
     }
 }

@@ -12,6 +12,7 @@ const EnsoAnimation = ({ onInteraction, size = 400 }: EnsoAnimationProps) => {
     const [isHovered, setIsHovered] = useState(false);
     const [hasInteracted, setHasInteracted] = useState(false);
     const [ripples, setRipples] = useState<number[]>([]);
+    const [showPing, setShowPing] = useState(false);
 
     useEffect(() => {
         setIsHydrated(true);
@@ -25,6 +26,9 @@ const EnsoAnimation = ({ onInteraction, size = 400 }: EnsoAnimationProps) => {
         const id = Date.now();
         setRipples((prev) => [...prev, id]);
         setTimeout(() => setRipples((prev) => prev.filter((r) => r !== id)), 1200);
+        // Show ping briefly, then auto-clear
+        setShowPing(true);
+        setTimeout(() => setShowPing(false), 1500);
     };
 
     return (
@@ -68,28 +72,29 @@ const EnsoAnimation = ({ onInteraction, size = 400 }: EnsoAnimationProps) => {
                     xmlns="http://www.w3.org/2000/svg"
                 >
                     <defs>
-                        <linearGradient id="ensoGradientMain" x1="0%" y1="0%" x2="100%" y2="100%">
+                        {/* Prefixed IDs prevent DOM collision with Header/EnsoLogo SVGs */}
+                        <linearGradient id="enso-anim-grad-main" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" stopColor="#00ffcc" />
                             <stop offset="50%" stopColor="#20b2aa" />
                             <stop offset="100%" stopColor="#00ffcc" />
                         </linearGradient>
-                        <linearGradient id="ensoGradientInner" x1="100%" y1="0%" x2="0%" y2="100%">
+                        <linearGradient id="enso-anim-grad-inner" x1="100%" y1="0%" x2="0%" y2="100%">
                             <stop offset="0%" stopColor="#20b2aa" />
                             <stop offset="50%" stopColor="#00ffff" />
                             <stop offset="100%" stopColor="#20b2aa" />
                         </linearGradient>
-                        <linearGradient id="ensoGradientCore" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <linearGradient id="enso-anim-grad-core" x1="0%" y1="100%" x2="100%" y2="0%">
                             <stop offset="0%" stopColor="#00ffcc" />
                             <stop offset="100%" stopColor="#ff6b35" />
                         </linearGradient>
-                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                        <filter id="enso-anim-glow" x="-20%" y="-20%" width="140%" height="140%">
                             <feGaussianBlur stdDeviation="6" result="coloredBlur" />
                             <feMerge>
                                 <feMergeNode in="coloredBlur" />
                                 <feMergeNode in="SourceGraphic" />
                             </feMerge>
                         </filter>
-                        <filter id="glowStrong" x="-30%" y="-30%" width="160%" height="160%">
+                        <filter id="enso-anim-glow-strong" x="-30%" y="-30%" width="160%" height="160%">
                             <feGaussianBlur stdDeviation="10" result="coloredBlur" />
                             <feMerge>
                                 <feMergeNode in="coloredBlur" />
@@ -117,11 +122,11 @@ const EnsoAnimation = ({ onInteraction, size = 400 }: EnsoAnimationProps) => {
                         cy="200"
                         r="170"
                         fill="none"
-                        stroke="url(#ensoGradientMain)"
+                        stroke="url(#enso-anim-grad-main)"
                         strokeWidth={isHovered ? '10' : '7'}
                         strokeLinecap="round"
                         strokeDasharray="1000 120"
-                        filter="url(#glow)"
+                        filter="url(#enso-anim-glow)"
                         className="animate-enso-rotate transition-all duration-300"
                         style={{ animationDuration: '10s' }}
                     />
@@ -132,7 +137,7 @@ const EnsoAnimation = ({ onInteraction, size = 400 }: EnsoAnimationProps) => {
                         cy="200"
                         r="140"
                         fill="none"
-                        stroke="url(#ensoGradientInner)"
+                        stroke="url(#enso-anim-grad-inner)"
                         strokeWidth="4"
                         strokeLinecap="round"
                         strokeDasharray="780 90"
@@ -141,13 +146,13 @@ const EnsoAnimation = ({ onInteraction, size = 400 }: EnsoAnimationProps) => {
                         style={{ animationDirection: 'reverse', animationDuration: '15s' }}
                     />
 
-                    {/* Core ring — accent accent color gradient */}
+                    {/* Core ring — accent color gradient */}
                     <circle
                         cx="200"
                         cy="200"
                         r="110"
                         fill="none"
-                        stroke="url(#ensoGradientCore)"
+                        stroke="url(#enso-anim-grad-core)"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeDasharray="560 70"
@@ -156,13 +161,13 @@ const EnsoAnimation = ({ onInteraction, size = 400 }: EnsoAnimationProps) => {
                         style={{ animationDuration: '22s' }}
                     />
 
-                    {/* Center dot */}
+                    {/* Center dot — cy=200 is true center of 400x400 viewBox */}
                     <circle
                         cx="200"
-                        cy="188"
+                        cy="200"
                         r={isHovered ? '6' : '4'}
                         fill="#00ffcc"
-                        filter="url(#glowStrong)"
+                        filter="url(#enso-anim-glow-strong)"
                         className="transition-all duration-300"
                         opacity="0.9"
                     />
@@ -170,8 +175,8 @@ const EnsoAnimation = ({ onInteraction, size = 400 }: EnsoAnimationProps) => {
 
                 </svg>
 
-                {/* Interaction ping */}
-                {hasInteracted && (
+                {/* Interaction ping — auto-clears after 1.5s via showPing state */}
+                {showPing && (
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                         <div className="w-4 h-4 bg-primary rounded-full animate-ping opacity-60" />
                     </div>

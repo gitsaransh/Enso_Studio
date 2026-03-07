@@ -1,6 +1,7 @@
 
 import { PROJECTS } from '@/constants/data';
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import Icon from '@/components/ui/AppIcon';
@@ -53,19 +54,7 @@ export default async function ProjectPage({
     const project = PROJECTS.find((p) => p.id === id);
 
     if (!project) {
-        return (
-            <div className="min-h-screen bg-background flex flex-col">
-                <Header className="bg-background/80 backdrop-blur-md border-b border-border/20" />
-                <div className="flex-grow flex flex-col items-center justify-center text-foreground">
-                    <h1 className="text-4xl font-orbitron mb-4">404</h1>
-                    <p className="font-source text-muted-foreground">Project not found.</p>
-                    <Link href="/" className="btn-glass mt-8 px-6 py-2">
-                        Return Home
-                    </Link>
-                </div>
-                <Footer />
-            </div>
-        );
+        notFound(); // Sets HTTP 404 status — correct for SEO vs returning a 200 with error content
     }
 
     return (

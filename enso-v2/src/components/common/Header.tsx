@@ -28,7 +28,7 @@ const Header = ({ className = '' }: HeaderProps) => {
         if (isMobileMenuOpen) {
             document.body.style.overflow = 'hidden';
         } else {
-            document.body.style.overflow = 'unset';
+            document.body.style.overflow = '';
         }
     }, [isMobileMenuOpen]);
 
@@ -51,14 +51,15 @@ const Header = ({ className = '' }: HeaderProps) => {
                                     cy="50"
                                     r="45"
                                     fill="none"
-                                    stroke="url(#ensoGradient)"
+                                    stroke="url(#header-enso-gradient)"
                                     strokeWidth="3"
                                     strokeLinecap="round"
                                     strokeDasharray="250 30"
                                     className="transition-zen group-hover:stroke-[4]"
                                 />
                                 <defs>
-                                    <linearGradient id="ensoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    {/* Unique ID prevents collision with EnsoLogo/EnsoAnimation SVGs */}
+                                    <linearGradient id="header-enso-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                                         <stop offset="0%" stopColor="#00ffff" />
                                         <stop offset="100%" stopColor="#20b2aa" />
                                     </linearGradient>

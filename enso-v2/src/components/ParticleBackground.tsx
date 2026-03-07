@@ -58,7 +58,10 @@ const ParticleBackground = () => {
         document.addEventListener('mousemove', onMouseMove);
 
         let animId: number;
+        let isRunning = true;
+
         const animate = () => {
+            if (!isRunning) return;
             animId = requestAnimationFrame(animate);
 
             // Gentle auto-rotation
@@ -73,16 +76,32 @@ const ParticleBackground = () => {
         };
         animate();
 
+        // Pause RAF when tab is hidden — avoids unnecessary GPU draw calls in background
+        const onVisibilityChange = () => {
+            if (document.hidden) {
+                isRunning = false;
+                cancelAnimationFrame(animId);
+            } else {
+                isRunning = true;
+                animate();
+            }
+        };
+        document.addEventListener('visibilitychange', onVisibilityChange);
+
         const onResize = () => {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
+            // Update pixel ratio in case window moved to a different DPI display
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         };
         window.addEventListener('resize', onResize);
 
         return () => {
+            isRunning = false;
             cancelAnimationFrame(animId);
             document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('visibilitychange', onVisibilityChange);
             window.removeEventListener('resize', onResize);
             geometry.dispose();
             material.dispose();

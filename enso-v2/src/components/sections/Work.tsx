@@ -23,9 +23,10 @@ const Work = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {PROJECTS.map((project) => (
-                        <div
+                        <Link
                             key={project.id}
-                            className="group relative p-8 bg-card border border-input rounded-lg overflow-hidden hover:border-accent/50 transition-zen cursor-pointer"
+                            href={`/work/${project.id}`}
+                            className="group relative p-8 bg-card border border-input rounded-lg overflow-hidden hover:border-accent/50 transition-zen block"
                         >
                             <div className="flex justify-between items-start mb-6">
                                 <div>
@@ -45,15 +46,15 @@ const Work = () => {
                                 {project.description}
                             </p>
 
-                            <div className="flex items-center text-sm font-semibold text-foreground group-hover:text-accent transition-zen">
-                                <span className="flex items-center text-muted-foreground/50 cursor-not-allowed">
-                                    Coming Soon <Icon name="LockClosedIcon" size={16} className="ml-2" />
+                            <div className="flex items-center text-sm font-semibold text-muted-foreground group-hover:text-accent transition-zen">
+                                <span className="flex items-center gap-2">
+                                    View Details <Icon name="ArrowRightIcon" size={16} className="transform group-hover:translate-x-1 transition-zen" />
                                 </span>
                             </div>
 
                             {/* Hover Glow Effect */}
                             <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-accent/5 rounded-full blur-[80px] group-hover:bg-accent/10 transition-zen pointer-events-none" />
-                        </div>
+                        </Link>
                     ))}
                 </div>
 

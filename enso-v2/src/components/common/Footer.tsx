@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Icon from '@/components/ui/AppIcon';
+import type { IconName } from '@/components/ui/AppIcon';
 import EnsoLogo from './EnsoLogo';
 
 interface FooterProps {
@@ -11,11 +12,11 @@ interface FooterProps {
 const Footer = ({ className = '' }: FooterProps) => {
     const currentYear = new Date().getFullYear();
 
-    const socialLinks = [
-        { name: 'GitHub', icon: 'CodeBracketIcon', href: '#' },
-        { name: 'Twitter', icon: 'AtSymbolIcon', href: '#' },
-        { name: 'LinkedIn', icon: 'BriefcaseIcon', href: '#' },
-        { name: 'Dribbble', icon: 'PaintBrushIcon', href: '#' },
+    const socialLinks: { name: string; icon: IconName; href: string; live: boolean }[] = [
+        { name: 'GitHub', icon: 'CodeBracketIcon', href: 'https://github.com/gitsaransh', live: true },
+        { name: 'Twitter', icon: 'AtSymbolIcon', href: '#', live: false },
+        { name: 'LinkedIn', icon: 'BriefcaseIcon', href: '#', live: false },
+        { name: 'Dribbble', icon: 'PaintBrushIcon', href: '#', live: false },
     ];
 
     return (
@@ -39,10 +40,13 @@ const Footer = ({ className = '' }: FooterProps) => {
                             <a
                                 key={social.name}
                                 href={social.href}
-                                className="p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-zen group"
-                                aria-label={social.name}
+                                target={social.live ? '_blank' : undefined}
+                                rel={social.live ? 'noopener noreferrer' : undefined}
+                                onClick={!social.live ? (e) => e.preventDefault() : undefined}
+                                className={`p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-zen group ${!social.live ? 'opacity-40 cursor-not-allowed' : ''}`}
+                                aria-label={social.live ? social.name : `${social.name} (coming soon)`}
                             >
-                                <Icon name={social.icon as any} size={20} className="group-hover:scale-110 transition-zen" />
+                                <Icon name={social.icon} size={20} className="group-hover:scale-110 transition-zen" />
                             </a>
                         ))}
                     </div>

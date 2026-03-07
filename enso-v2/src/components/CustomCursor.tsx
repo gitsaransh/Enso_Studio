@@ -35,24 +35,24 @@ const CustomCursor = () => {
         };
         animateFollower();
 
-        // Scale on interactive elements
-        const interactiveEls = document.querySelectorAll(
-            'a, button, .project-card-interactive, .skill-card-interactive, [data-cursor-hover]'
-        );
+        // Event delegation — works for dynamically added elements (scroll reveals, etc.)
+        const INTERACTIVE = 'a, button, .project-card-interactive, .skill-card-interactive, [data-cursor-hover]';
 
-        const onEnter = () => {
-            cursor.classList.add('cursor-hover');
-            follower.classList.add('cursor-hover');
+        const onOver = (e: MouseEvent) => {
+            if ((e.target as Element).closest(INTERACTIVE)) {
+                cursor.classList.add('cursor-hover');
+                follower.classList.add('cursor-hover');
+            }
         };
-        const onLeave = () => {
-            cursor.classList.remove('cursor-hover');
-            follower.classList.remove('cursor-hover');
+        const onOut = (e: MouseEvent) => {
+            if ((e.target as Element).closest(INTERACTIVE)) {
+                cursor.classList.remove('cursor-hover');
+                follower.classList.remove('cursor-hover');
+            }
         };
 
-        interactiveEls.forEach((el) => {
-            el.addEventListener('mouseenter', onEnter);
-            el.addEventListener('mouseleave', onLeave);
-        });
+        document.addEventListener('mouseover', onOver);
+        document.addEventListener('mouseout', onOut);
 
         // Show cursor
         cursor.style.opacity = '1';
@@ -61,10 +61,8 @@ const CustomCursor = () => {
         return () => {
             cancelAnimationFrame(animId);
             document.removeEventListener('mousemove', onMove);
-            interactiveEls.forEach((el) => {
-                el.removeEventListener('mouseenter', onEnter);
-                el.removeEventListener('mouseleave', onLeave);
-            });
+            document.removeEventListener('mouseover', onOver);
+            document.removeEventListener('mouseout', onOut);
         };
     }, []);
 

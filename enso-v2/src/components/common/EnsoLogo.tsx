@@ -31,7 +31,7 @@ const EnsoLogo = ({ size = 200, className = '', animated = true, onClick }: Enso
                     cy="100"
                     r="85"
                     fill="none"
-                    stroke="url(#ensoGradientLogo)"
+                    stroke="url(#logo-enso-grad-main)"
                     strokeWidth="6"
                     strokeLinecap="round"
                     strokeDasharray="500 60"
@@ -43,7 +43,7 @@ const EnsoLogo = ({ size = 200, className = '', animated = true, onClick }: Enso
                     cy="100"
                     r="70"
                     fill="none"
-                    stroke="url(#ensoGradientInner)"
+                    stroke="url(#logo-enso-grad-inner)"
                     strokeWidth="3"
                     strokeLinecap="round"
                     strokeDasharray="400 40"
@@ -53,17 +53,18 @@ const EnsoLogo = ({ size = 200, className = '', animated = true, onClick }: Enso
                 />
 
                 <defs>
-                    <linearGradient id="ensoGradientLogo" x1="0%" y1="0%" x2="100%" y2="100%">
+                    {/* Unique IDs prevent collision with Header/EnsoAnimation SVGs */}
+                    <linearGradient id="logo-enso-grad-main" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" stopColor="#00ffff" />
                         <stop offset="50%" stopColor="#20b2aa" />
                         <stop offset="100%" stopColor="#00ffff" />
                     </linearGradient>
-                    <linearGradient id="ensoGradientInner" x1="100%" y1="0%" x2="0%" y2="100%">
+                    <linearGradient id="logo-enso-grad-inner" x1="100%" y1="0%" x2="0%" y2="100%">
                         <stop offset="0%" stopColor="#20b2aa" />
                         <stop offset="100%" stopColor="#00ffff" />
                     </linearGradient>
 
-                    <filter id="glow">
+                    <filter id="logo-enso-glow">
                         <feGaussianBlur stdDeviation="4" result="coloredBlur" />
                         <feMerge>
                             <feMergeNode in="coloredBlur" />

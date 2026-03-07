@@ -79,26 +79,11 @@ module.exports = {
                 '34': '8.5rem',
                 '55': '13.75rem',
             },
-            keyframes: {
-                'enso-rotate': {
-                    '0%': { transform: 'rotate(0deg)' },
-                    '100%': { transform: 'rotate(360deg)' },
-                },
-                'fade-in': {
-                    '0%': { opacity: '0', transform: 'translateY(30px)' },
-                    '100%': { opacity: '1', transform: 'translateY(0)' },
-                },
-                'glow-pulse': {
-                    '0%, 100%': { boxShadow: '0 0 20px rgba(0, 255, 255, 0.3)' },
-                    '50%': { boxShadow: '0 0 30px rgba(0, 255, 255, 0.5)' },
-                },
-            },
-            animation: {
-                'enso-rotate': 'enso-rotate 8s cubic-bezier(0.4, 0, 0.2, 1) infinite',
-                'fade-in': 'fade-in 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
-                'glow-pulse': 'glow-pulse 2s cubic-bezier(0.4, 0, 0.2, 1) infinite',
-            },
+            keyframes: {},
+            animation: {},
         },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/typography'),
+    ],
 }

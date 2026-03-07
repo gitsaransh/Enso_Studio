@@ -72,10 +72,17 @@ const Products = () => {
                                             ${product.price}
                                         </span>
                                     </div>
-                                    <button className="btn-glass-secondary px-6 py-3 text-sm">
-                                        <span>Buy System</span>
-                                        <Icon name="ArrowRightIcon" size={16} />
-                                    </button>
+                                    <a
+                                        href={product.link}
+                                        target={product.link !== '#' ? '_blank' : undefined}
+                                        rel={product.link !== '#' ? 'noopener noreferrer' : undefined}
+                                        onClick={product.link === '#' ? (e) => e.preventDefault() : undefined}
+                                        className={`btn-glass-secondary px-6 py-3 text-sm ${product.link === '#' ? 'opacity-50 cursor-not-allowed' : ''}`}
+                                        aria-disabled={product.link === '#'}
+                                    >
+                                        <span>{product.link === '#' ? 'Coming Soon' : 'Buy System'}</span>
+                                        <Icon name={product.link === '#' ? 'LockClosedIcon' : 'ArrowRightIcon'} size={16} />
+                                    </a>
                                 </div>
 
                                 {/* Visual Background Gradient */}

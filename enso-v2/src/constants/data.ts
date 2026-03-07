@@ -88,7 +88,7 @@ export const PROJECTS = [
         category: 'Game',
         description: 'Daily brain training through lateral thinking puzzles. A minimalist design approach to cognitive enhancement.',
         status: 'In Development',
-        statusColor: 'text-success border-success/30 bg-success/10',
+        statusColor: 'text-warning border-warning/30 bg-warning/10',
         longDescription: 'MindSpark reimagines daily brain training with a focus on lateral thinking and pattern recognition. Designed with a calming, minimalist interface, it strips away gamification clutter to let the puzzles shine. The app adapts to the user\'s skill level, offering a personalized daily workout for the mind.',
         technologies: ['React Native', 'TypeScript', 'Node.js', 'Firebase'],
         role: 'Full Stack Development, UI/UX Design',
