@@ -168,7 +168,7 @@ const EnsoAnimation = ({ onInteraction, size = 400 }: EnsoAnimationProps) => {
                         r={isHovered ? '6' : '4'}
                         fill="#00ffcc"
                         filter="url(#enso-anim-glow-strong)"
-                        className="transition-all duration-300"
+                        className="transition-all duration-300 animate-dot-breathe"
                         opacity="0.9"
                     />
 
